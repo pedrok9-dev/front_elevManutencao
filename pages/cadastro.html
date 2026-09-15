@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Criar conta — ElevManutenção</title>
+  <link rel="stylesheet" href="../assets/css/global.css">
+  <script src="../assets/js/config.js"></script>
+  <script src="../assets/js/api.js"></script>
+  <script src="../assets/js/auth.js"></script>
+  <script src="../assets/js/pages/cadastro.js" defer></script>
+</head>
+<body>
+
+  <div class="tela-auth">
+    <div class="tela-auth__conteudo">
+      <div class="marca">
+        <span class="marca__indicador"><span></span><span></span><span></span><span></span></span>
+        ElevManutenção
+      </div>
+      <h1>Crie sua conta e centralize as compras da sua equipe.</h1>
+      <p>Cadastre-se com CPF e endereço para agilizar o checkout. Buscamos seu endereço automaticamente a partir do CEP.</p>
+    </div>
+
+    <div class="tela-auth__card" style="width:min(480px, 92vw);">
+      <h2>Criar conta</h2>
+      <p>Leva menos de 2 minutos.</p>
+
+      <form id="form-cadastro">
+        <div class="campo-grupo">
+          <label for="nome">Nome completo</label>
+          <input class="campo-entrada" id="nome" placeholder="Seu nome" required>
+        </div>
+
+        <div class="campo-linha campo-linha--2">
+          <div class="campo-grupo">
+            <label for="email">E-mail</label>
+            <input class="campo-entrada" type="email" id="email" placeholder="voce@empresa.com.br" required>
+          </div>
+          <div class="campo-grupo">
+            <label for="telefone">Telefone</label>
+            <input class="campo-entrada" id="telefone" placeholder="(47) 99999-0000" required>
+          </div>
+        </div>
+
+        <div class="campo-linha campo-linha--2">
+          <div class="campo-grupo">
+            <label for="cpf">CPF</label>
+            <input class="campo-entrada" id="cpf" placeholder="000.000.000-00" required>
+          </div>
+          <div class="campo-grupo">
+            <label for="senha">Senha</label>
+            <input class="campo-entrada" type="password" id="senha" placeholder="Mínimo 6 caracteres" required>
+          </div>
+        </div>
+
+        <hr style="border:none;border-top:1px solid var(--cinza-200);margin:1.2rem 0;">
+        <p style="font-size:.8rem;color:var(--cinza-600);margin-bottom:.8rem;">Endereço para entrega (opcional agora — pode ser feito depois no perfil)</p>
+
+        <div class="campo-linha campo-linha--3">
+          <div class="campo-grupo">
+            <label for="cep">CEP</label>
+            <input class="campo-entrada" id="cep" placeholder="00000-000">
+          </div>
+          <div class="campo-grupo">
+            <label for="numero">Número</label>
+            <input class="campo-entrada" id="numero" placeholder="123">
+          </div>
+          <div class="campo-grupo">
+            <label for="complemento">Compl.</label>
+            <input class="campo-entrada" id="complemento" placeholder="Sala 2">
+          </div>
+        </div>
+
+        <div class="campo-grupo">
+          <label for="logradouro">Logradouro</label>
+          <input class="campo-entrada" id="logradouro" placeholder="Preenchido pelo CEP" readonly>
+        </div>
+
+        <div class="campo-linha campo-linha--3">
+          <div class="campo-grupo">
+            <label for="bairro">Bairro</label>
+            <input class="campo-entrada" id="bairro" readonly>
+          </div>
+          <div class="campo-grupo">
+            <label for="cidade">Cidade</label>
+            <input class="campo-entrada" id="cidade" readonly>
+          </div>
+          <div class="campo-grupo">
+            <label for="estado">UF</label>
+            <input class="campo-entrada" id="estado" readonly>
+          </div>
+        </div>
+
+        <button type="submit" class="botao botao--laranja botao--bloco" id="btnCadastrar">Criar conta</button>
+      </form>
+
+      <a href="../index.html" class="link-secundario">Já tem conta? Entrar</a>
+      <div id="res" class="mensagem-resposta"></div>
+    </div>
+  </div>
+
+</body>
+</html>

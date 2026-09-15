@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Entrar — ElevManutenção</title>
+  <link rel="stylesheet" href="./assets/css/global.css">
+  <script src="./assets/js/config.js"></script>
+  <script src="./assets/js/api.js"></script>
+  <script src="./assets/js/auth.js"></script>
+  <script src="./assets/js/pages/login.js" defer></script>
+</head>
+<body>
+
+  <div class="tela-auth">
+    <div class="tela-auth__conteudo">
+      <div class="marca">
+        <span class="marca__indicador"><span></span><span></span><span></span><span></span></span>
+        ElevManutenção
+      </div>
+      <h1>Peças, ferramentas e kits para manter o elevador em movimento.</h1>
+      <p>Plataforma B2B para técnicos autônomos, empresas de manutenção e síndicos: catálogo organizado por área, estoque em tempo real e kits prontos para cada tipo de chamado.</p>
+      <ul class="lista-beneficios">
+        <li>Busca por nome ou código interno do produto</li>
+        <li>Estoque visível — sem vender o que não existe</li>
+        <li>Kits de manutenção com composição verificada</li>
+        <li>Acompanhamento do pedido até a entrega</li>
+      </ul>
+    </div>
+
+    <div class="tela-auth__card">
+      <h2>Bem-vindo de volta</h2>
+      <p>Acesse sua conta para continuar suas compras.</p>
+
+      <form id="form-login">
+        <div class="campo-grupo">
+          <label for="email">E-mail</label>
+          <input class="campo-entrada" type="email" id="email" placeholder="seuemail@empresa.com.br" required>
+        </div>
+        <div class="campo-grupo">
+          <label for="senha">Senha</label>
+          <input class="campo-entrada" type="password" id="senha" placeholder="••••••••" required>
+        </div>
+        <button type="submit" class="botao botao--laranja botao--bloco" id="btnEntrar">Entrar</button>
+      </form>
+
+      <a href="./pages/cadastro.html" class="link-secundario">Ainda não tem conta? Cadastre-se</a>
+      <div id="res" class="mensagem-resposta"></div>
+    </div>
+  </div>
+
+</body>
+</html>
