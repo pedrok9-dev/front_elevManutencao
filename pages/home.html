@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ElevManutenção — Peças e kits para manutenção de elevadores</title>
+  <link rel="stylesheet" href="../assets/css/global.css">
+  <script src="../assets/js/config.js"></script>
+  <script src="../assets/js/api.js"></script>
+  <script src="../assets/js/auth.js"></script>
+  <script src="../assets/js/carrinho.js"></script>
+  <script src="../assets/js/pages/home.js" defer></script>
+</head>
+<body style="display:flex;flex-direction:column;min-height:100vh;">
+
+  <header class="cabecalho" id="cabecalho">
+    <div class="faixa-sinalizacao"></div>
+    <div class="container cabecalho__barra">
+      <a href="./home.html" class="marca">
+        <span class="marca__indicador"><span></span><span></span><span></span><span></span></span>
+        <span>ElevManutenção<br><small>Peças &amp; kits técnicos</small></span>
+      </a>
+
+      <nav class="nav-principal">
+        <a href="./home.html" class="ativo">Início</a>
+        <a href="./loja.html">Catálogo</a>
+        <a href="./kits.html">Kits</a>
+        <a href="./meus-pedidos.html">Meus pedidos</a>
+      </nav>
+
+      <div class="nav-usuario">
+        <form class="busca-topo" id="form-busca-topo">
+          <input type="text" id="busca-topo-input" placeholder="Buscar produto ou código...">
+          <button type="submit">Ir</button>
+        </form>
+        <a href="./carrinho.html" class="icone-carrinho">🛒 <span data-contador-carrinho>0</span></a>
+        <span class="nav-usuario__nome">Olá, <strong id="nomeUsuario">cliente</strong></span>
+        <button class="botao botao--contorno" id="btnLogout" style="padding:.4rem .8rem;border-color:#fff;color:#fff;">Sair</button>
+      </div>
+
+      <div class="icone-menu-hamburguer" id="btnMenuMobile">&#9776;</div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero__grade">
+        <div>
+          <span class="eyebrow">Manutenção preventiva e corretiva</span>
+          <h1>Peças e soluções para manutenção de elevadores</h1>
+          <p>Encontre componentes mecânicos, elétricos e eletrônicos com estoque atualizado — ou monte um chamado inteiro com nossos kits prontos.</p>
+          <div class="hero__acoes">
+            <a href="./loja.html" class="botao botao--laranja">Ver catálogo completo</a>
+            <a href="./kits.html" class="botao botao--contorno" style="border-color:#fff;color:#fff;">Ver kits de manutenção</a>
+          </div>
+        </div>
+        <div class="hero__painel">
+          <h3>Navegue por necessidade</h3>
+          <div class="hero__caminhos">
+            <a class="hero__caminho" href="./loja.html?categoria=Portas%20e%20cabine">Manutenção de portas</a>
+            <a class="hero__caminho" href="./loja.html?categoria=El%C3%A9trica">Falhas elétricas</a>
+            <a class="hero__caminho" href="./loja.html?categoria=Mec%C3%A2nica">Componentes mecânicos</a>
+            <a class="hero__caminho" href="./loja.html?categoria=Seguran%C3%A7a%20e%20emerg%C3%AAncia">Segurança e emergência</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="secao">
+      <div class="container">
+        <div class="secao__topo">
+          <div>
+            <span class="eyebrow">Categorias</span>
+            <h2>Organizado por área da manutenção</h2>
+          </div>
+        </div>
+        <div class="grade-categorias" id="grade-categorias">
+          <p class="carregando">Carregando categorias...</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="secao" style="background:var(--branco);">
+      <div class="container">
+        <div class="secao__topo">
+          <div>
+            <span class="eyebrow">Diferencial ElevManutenção</span>
+            <h2>Kits em destaque</h2>
+          </div>
+          <a href="./kits.html" class="botao botao--contorno">Ver todos os kits</a>
+        </div>
+        <div class="grade-produtos" id="grade-kits">
+          <p class="carregando">Carregando kits...</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="secao">
+      <div class="container">
+        <div class="secao__topo">
+          <div>
+            <span class="eyebrow">Catálogo</span>
+            <h2>Produtos em destaque</h2>
+          </div>
+          <a href="./loja.html" class="botao botao--contorno">Ver catálogo completo</a>
+        </div>
+        <div class="grade-produtos" id="grade-produtos">
+          <p class="carregando">Carregando produtos...</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="rodape">
+    <div class="container">
+      <div class="rodape__grade">
+        <div>
+          <div class="marca" style="color:#fff;margin-bottom:.6rem;">
+            <span class="marca__indicador"><span></span><span></span><span></span><span></span></span>
+            ElevManutenção
+          </div>
+          <p style="font-size:.85rem;">Central de suprimentos para quem mantém elevadores em movimento.</p>
+        </div>
+        <div>
+          <h4>Loja</h4>
+          <ul>
+            <li><a href="./loja.html">Catálogo</a></li>
+            <li><a href="./kits.html">Kits de manutenção</a></li>
+            <li><a href="./carrinho.html">Carrinho</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Conta</h4>
+          <ul>
+            <li><a href="./perfil.html">Meu perfil</a></li>
+            <li><a href="./meus-pedidos.html">Meus pedidos</a></li>
+          </ul>
+        </div>
+        <div>
+          <h4>Suporte</h4>
+          <ul>
+            <li><a href="#">Política de entrega</a></li>
+            <li><a href="#">Canais de contato</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="rodape__baixo">© 2026 ElevManutenção — Projeto acadêmico de e-commerce B2B.</div>
+    </div>
+  </footer>
+
+</body>
+</html>

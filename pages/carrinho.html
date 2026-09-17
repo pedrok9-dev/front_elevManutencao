@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carrinho — ElevManutenção</title>
+  <link rel="stylesheet" href="../assets/css/global.css">
+  <script src="../assets/js/config.js"></script>
+  <script src="../assets/js/api.js"></script>
+  <script src="../assets/js/auth.js"></script>
+  <script src="../assets/js/carrinho.js"></script>
+  <script src="../assets/js/pages/carrinho.js" defer></script>
+</head>
+<body style="display:flex;flex-direction:column;min-height:100vh;">
+
+  <header class="cabecalho" id="cabecalho">
+    <div class="faixa-sinalizacao"></div>
+    <div class="container cabecalho__barra">
+      <a href="./home.html" class="marca">
+        <span class="marca__indicador"><span></span><span></span><span></span><span></span></span>
+        <span>ElevManutenção<br><small>Peças &amp; kits técnicos</small></span>
+      </a>
+      <nav class="nav-principal">
+        <a href="./home.html">Início</a>
+        <a href="./loja.html">Catálogo</a>
+        <a href="./kits.html">Kits</a>
+        <a href="./meus-pedidos.html">Meus pedidos</a>
+      </nav>
+      <div class="nav-usuario">
+        <a href="./carrinho.html" class="icone-carrinho ativo">🛒 <span data-contador-carrinho>0</span></a>
+        <span class="nav-usuario__nome">Olá, <strong id="nomeUsuario">cliente</strong></span>
+        <button class="botao botao--contorno" id="btnLogout" style="padding:.4rem .8rem;border-color:#fff;color:#fff;">Sair</button>
+      </div>
+      <div class="icone-menu-hamburguer" id="btnMenuMobile">&#9776;</div>
+    </div>
+  </header>
+
+  <main class="secao">
+    <div class="container">
+      <h2 style="margin-bottom:1.4rem;">Seu carrinho</h2>
+      <div class="grade-2" style="align-items:start;">
+        <div id="lista-carrinho">
+          <p class="carregando">Carregando...</p>
+        </div>
+
+        <aside class="painel">
+          <h3 style="font-size:1rem;margin-bottom:1rem;">Resumo do pedido</h3>
+          <div style="display:flex;justify-content:space-between;font-size:.92rem;margin-bottom:.5rem;">
+            <span>Itens</span><span id="resumo-itens">0</span>
+          </div>
+          <div style="display:flex;justify-content:space-between;font-size:1.2rem;font-weight:700;color:var(--azul-900);margin:1rem 0;">
+            <span>Total</span><span id="resumo-total">R$ 0,00</span>
+          </div>
+          <a href="./checkout.html" class="botao botao--laranja botao--bloco" id="btnCheckout">Finalizar compra</a>
+          <a href="./loja.html" class="botao botao--contorno botao--bloco" style="margin-top:.6rem;">Continuar comprando</a>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <footer class="rodape">
+    <div class="container"><div class="rodape__baixo">© 2026 ElevManutenção — Projeto acadêmico de e-commerce B2B.</div></div>
+  </footer>
+
+</body>
+</html>

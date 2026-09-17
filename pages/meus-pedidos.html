@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meus pedidos — ElevManutenção</title>
+  <link rel="stylesheet" href="../assets/css/global.css">
+  <script src="../assets/js/config.js"></script>
+  <script src="../assets/js/api.js"></script>
+  <script src="../assets/js/auth.js"></script>
+  <script src="../assets/js/carrinho.js"></script>
+  <script src="../assets/js/pages/meus-pedidos.js" defer></script>
+</head>
+<body style="display:flex;flex-direction:column;min-height:100vh;">
+
+  <header class="cabecalho" id="cabecalho">
+    <div class="faixa-sinalizacao"></div>
+    <div class="container cabecalho__barra">
+      <a href="./home.html" class="marca">
+        <span class="marca__indicador"><span></span><span></span><span></span><span></span></span>
+        <span>ElevManutenção<br><small>Peças &amp; kits técnicos</small></span>
+      </a>
+      <nav class="nav-principal">
+        <a href="./home.html">Início</a>
+        <a href="./loja.html">Catálogo</a>
+        <a href="./kits.html">Kits</a>
+        <a href="./meus-pedidos.html" class="ativo">Meus pedidos</a>
+      </nav>
+      <div class="nav-usuario">
+        <a href="./carrinho.html" class="icone-carrinho">🛒 <span data-contador-carrinho>0</span></a>
+        <span class="nav-usuario__nome">Olá, <strong id="nomeUsuario">cliente</strong></span>
+        <button class="botao botao--contorno" id="btnLogout" style="padding:.4rem .8rem;border-color:#fff;color:#fff;">Sair</button>
+      </div>
+      <div class="icone-menu-hamburguer" id="btnMenuMobile">&#9776;</div>
+    </div>
+  </header>
+
+  <main class="secao">
+    <div class="container">
+      <h2 style="margin-bottom:1.4rem;">Meus pedidos</h2>
+      <div id="lista-pedidos"><p class="carregando">Carregando pedidos...</p></div>
+    </div>
+  </main>
+
+  <footer class="rodape">
+    <div class="container"><div class="rodape__baixo">© 2026 ElevManutenção — Projeto acadêmico de e-commerce B2B.</div></div>
+  </footer>
+
+</body>
+</html>

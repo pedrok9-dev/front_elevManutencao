@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Meu perfil — ElevManutenção</title>
+  <link rel="stylesheet" href="../assets/css/global.css">
+  <script src="../assets/js/config.js"></script>
+  <script src="../assets/js/api.js"></script>
+  <script src="../assets/js/auth.js"></script>
+  <script src="../assets/js/carrinho.js"></script>
+  <script src="../assets/js/pages/perfil.js" defer></script>
+</head>
+<body style="display:flex;flex-direction:column;min-height:100vh;">
+
+  <header class="cabecalho" id="cabecalho">
+    <div class="faixa-sinalizacao"></div>
+    <div class="container cabecalho__barra">
+      <a href="./home.html" class="marca">
+        <span class="marca__indicador"><span></span><span></span><span></span><span></span></span>
+        <span>ElevManutenção<br><small>Peças &amp; kits técnicos</small></span>
+      </a>
+      <nav class="nav-principal">
+        <a href="./home.html">Início</a>
+        <a href="./loja.html">Catálogo</a>
+        <a href="./kits.html">Kits</a>
+        <a href="./meus-pedidos.html">Meus pedidos</a>
+      </nav>
+      <div class="nav-usuario">
+        <a href="./carrinho.html" class="icone-carrinho">🛒 <span data-contador-carrinho>0</span></a>
+        <span class="nav-usuario__nome">Olá, <strong id="nomeUsuario">cliente</strong></span>
+        <button class="botao botao--contorno" id="btnLogout" style="padding:.4rem .8rem;border-color:#fff;color:#fff;">Sair</button>
+      </div>
+      <div class="icone-menu-hamburguer" id="btnMenuMobile">&#9776;</div>
+    </div>
+  </header>
+
+  <main class="secao">
+    <div class="container">
+      <h2 style="margin-bottom:1.4rem;">Meu perfil</h2>
+      <div class="grade-2" style="align-items:start;">
+        <div class="painel">
+          <h3 style="font-size:1rem;margin-bottom:1rem;">Dados cadastrais</h3>
+          <form id="form-perfil">
+            <div class="campo-grupo"><label>Nome</label><input class="campo-entrada" id="p-nome"></div>
+            <div class="campo-linha campo-linha--2">
+              <div class="campo-grupo"><label>E-mail</label><input class="campo-entrada" id="p-email" readonly></div>
+              <div class="campo-grupo"><label>Telefone</label><input class="campo-entrada" id="p-telefone"></div>
+            </div>
+            <div class="campo-grupo"><label>CPF</label><input class="campo-entrada" id="p-cpf" readonly></div>
+            <button type="submit" class="botao botao--laranja">Salvar alterações</button>
+          </form>
+          <div id="res-perfil" class="mensagem-resposta"></div>
+        </div>
+
+        <div class="painel">
+          <h3 style="font-size:1rem;margin-bottom:1rem;">Meus endereços</h3>
+          <div id="lista-enderecos-perfil"><p class="carregando">Carregando...</p></div>
+
+          <details style="margin-top:1.2rem;">
+            <summary style="cursor:pointer;font-weight:600;color:var(--azul-700);font-size:.9rem;">+ Cadastrar novo endereço</summary>
+            <form id="form-endereco-perfil" style="margin-top:1rem;">
+              <div class="campo-linha campo-linha--3">
+                <div class="campo-grupo"><label>CEP</label><input class="campo-entrada" id="ep-cep" placeholder="00000-000"></div>
+                <div class="campo-grupo"><label>Número</label><input class="campo-entrada" id="ep-numero" placeholder="123"></div>
+                <div class="campo-grupo"><label>Compl.</label><input class="campo-entrada" id="ep-complemento" placeholder="Opcional"></div>
+              </div>
+              <div class="campo-grupo"><label>Logradouro</label><input class="campo-entrada" id="ep-logradouro" readonly></div>
+              <div class="campo-linha campo-linha--3">
+                <div class="campo-grupo"><label>Bairro</label><input class="campo-entrada" id="ep-bairro" readonly></div>
+                <div class="campo-grupo"><label>Cidade</label><input class="campo-entrada" id="ep-cidade" readonly></div>
+                <div class="campo-grupo"><label>UF</label><input class="campo-entrada" id="ep-estado" readonly></div>
+              </div>
+              <button type="submit" class="botao botao--contorno botao--bloco">Salvar endereço</button>
+            </form>
+          </details>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer class="rodape">
+    <div class="container"><div class="rodape__baixo">© 2026 ElevManutenção — Projeto acadêmico de e-commerce B2B.</div></div>
+  </footer>
+
+</body>
+</html>
