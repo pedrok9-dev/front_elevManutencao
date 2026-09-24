@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Produtos — Painel ElevManutenção</title>
+  <link rel="stylesheet" href="../assets/css/global.css">
+  <link rel="stylesheet" href="../assets/css/admin.css">
+  <script src="../assets/js/config.js"></script>
+  <script src="../assets/js/api.js"></script>
+  <script src="../assets/js/auth.js"></script>
+  <script src="./js/produtos.js" defer></script>
+</head>
+<body>
+  <div class="admin-layout">
+    <aside class="admin-sidebar">
+      <div class="marca"><span class="marca__indicador"><span></span><span></span><span></span><span></span></span>ElevManutenção<br><small>Painel administrativo</small></div>
+      <nav class="admin-nav">
+        <a href="./dashboard.html">📊 Dashboard</a>
+        <div class="admin-nav__rotulo">Catálogo</div>
+        <a href="./produtos.html" class="ativo">📦 Produtos</a>
+        <a href="./categorias.html">🏷️ Categorias</a>
+        <a href="./fornecedores.html">🚚 Fornecedores</a>
+        <a href="./kits.html">🧰 Kits</a>
+        <div class="admin-nav__rotulo">Operação</div>
+        <a href="./estoque.html">📈 Estoque</a>
+        <a href="./pedidos.html">🧾 Pedidos</a>
+        <a href="./entregas.html">🚛 Entregas</a>
+        <div class="admin-nav__rotulo">Análise</div>
+        <a href="./relatorios.html">📊 Relatórios</a>
+      </nav>
+      <div class="admin-sidebar__rodape">
+        <div class="admin-sidebar__usuario">Logado como<br><strong id="nomeUsuario">admin</strong></div>
+        <button class="botao botao--contorno botao--bloco" id="btnLogout" style="border-color:#fff;color:#fff;">Sair</button>
+        <a href="../pages/home.html" class="botao botao--laranja botao--bloco">Ver loja</a>
+      </div>
+    </aside>
+
+    <main class="admin-main">
+      <div class="admin-topo">
+        <div><h1>Produtos</h1><p>Catálogo de peças e ferramentas vendidas individualmente.</p></div>
+        <button class="botao botao--laranja" id="btnNovoProduto">+ Novo produto</button>
+      </div>
+
+      <div class="painel">
+        <div class="admin-form-topo">
+          <input class="campo-entrada" id="busca-produto" placeholder="Buscar por nome ou código..." style="max-width:320px;">
+        </div>
+        <table class="tabela-padrao">
+          <thead><tr><th>Código</th><th>Nome</th><th>Categoria</th><th>Preço</th><th>Estoque</th><th>Status</th><th>Ações</th></tr></thead>
+          <tbody id="tbody-produtos"><tr><td colspan="7" class="carregando">Carregando...</td></tr></tbody>
+        </table>
+      </div>
+    </main>
+  </div>
+
+  <div class="modal-fundo" id="modal-produto">
+    <div class="modal-caixa">
+      <div class="modal-caixa__topo">
+        <h3 id="modal-titulo">Novo produto</h3>
+        <button class="modal-caixa__fechar" id="btnFecharModal">&times;</button>
+      </div>
+      <form id="form-produto">
+        <input type="hidden" id="pr-id">
+        <div class="campo-linha campo-linha--2">
+          <div class="campo-grupo"><label>Código interno</label><input class="campo-entrada" id="pr-codigo" required></div>
+          <div class="campo-grupo"><label>Nome</label><input class="campo-entrada" id="pr-nome" required></div>
+        </div>
+        <div class="campo-grupo"><label>Descrição</label><textarea class="campo-entrada" id="pr-descricao" rows="2"></textarea></div>
+        <div class="campo-linha campo-linha--3">
+          <div class="campo-grupo"><label>Categoria</label><select class="campo-entrada" id="pr-categoria" required></select></div>
+          <div class="campo-grupo"><label>Fornecedor</label><select class="campo-entrada" id="pr-fornecedor"><option value="">—</option></select></div>
+          <div class="campo-grupo"><label>Unidade</label><input class="campo-entrada" id="pr-unidade" placeholder="unidade" value="unidade"></div>
+        </div>
+        <div class="campo-linha campo-linha--2">
+          <div class="campo-grupo"><label>Preço (R$)</label><input class="campo-entrada" type="number" step="0.01" min="0.01" id="pr-preco" required></div>
+          <div class="campo-grupo" id="grupo-estoque-inicial"><label>Estoque inicial</label><input class="campo-entrada" type="number" min="0" id="pr-estoque" value="0"></div>
+        </div>
+        <button type="submit" class="botao botao--laranja botao--bloco">Salvar produto</button>
+      </form>
+      <div id="res-produto" class="mensagem-resposta"></div>
+    </div>
+  </div>
+
+</body>
+</html>

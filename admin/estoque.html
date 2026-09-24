@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Estoque — Painel ElevManutenção</title>
+  <link rel="stylesheet" href="../assets/css/global.css">
+  <link rel="stylesheet" href="../assets/css/admin.css">
+  <script src="../assets/js/config.js"></script>
+  <script src="../assets/js/api.js"></script>
+  <script src="../assets/js/auth.js"></script>
+  <script src="./js/estoque.js" defer></script>
+</head>
+<body>
+  <div class="admin-layout">
+    <aside class="admin-sidebar">
+      <div class="marca"><span class="marca__indicador"><span></span><span></span><span></span><span></span></span>ElevManutenção<br><small>Painel administrativo</small></div>
+      <nav class="admin-nav">
+        <a href="./dashboard.html">📊 Dashboard</a>
+        <div class="admin-nav__rotulo">Catálogo</div>
+        <a href="./produtos.html">📦 Produtos</a>
+        <a href="./categorias.html">🏷️ Categorias</a>
+        <a href="./fornecedores.html">🚚 Fornecedores</a>
+        <a href="./kits.html">🧰 Kits</a>
+        <div class="admin-nav__rotulo">Operação</div>
+        <a href="./estoque.html" class="ativo">📈 Estoque</a>
+        <a href="./pedidos.html">🧾 Pedidos</a>
+        <a href="./entregas.html">🚛 Entregas</a>
+        <div class="admin-nav__rotulo">Análise</div>
+        <a href="./relatorios.html">📊 Relatórios</a>
+      </nav>
+      <div class="admin-sidebar__rodape">
+        <div class="admin-sidebar__usuario">Logado como<br><strong id="nomeUsuario">admin</strong></div>
+        <button class="botao botao--contorno botao--bloco" id="btnLogout" style="border-color:#fff;color:#fff;">Sair</button>
+        <a href="../pages/home.html" class="botao botao--laranja botao--bloco">Ver loja</a>
+      </div>
+    </aside>
+
+    <main class="admin-main">
+      <div class="admin-topo">
+        <div><h1>Estoque</h1><p>Saldo atual, mínimos e movimentações de cada produto.</p></div>
+        <label style="display:flex;align-items:center;gap:.5rem;font-size:.85rem;">
+          <input type="checkbox" id="f-criticos" style="width:auto;"> Mostrar somente críticos
+        </label>
+      </div>
+
+      <div class="painel">
+        <table class="tabela-padrao">
+          <thead><tr><th>Código</th><th>Produto</th><th>Atual</th><th>Mínimo</th><th>Situação</th><th>Ações</th></tr></thead>
+          <tbody id="tbody-estoque"><tr><td colspan="6" class="carregando">Carregando...</td></tr></tbody>
+        </table>
+      </div>
+    </main>
+  </div>
+
+  <div class="modal-fundo" id="modal-movimentacao">
+    <div class="modal-caixa">
+      <div class="modal-caixa__topo">
+        <h3>Registrar movimentação</h3>
+        <button class="modal-caixa__fechar" id="btnFecharModalMov">&times;</button>
+      </div>
+      <form id="form-movimentacao">
+        <input type="hidden" id="mv-idProduto">
+        <p style="font-size:.9rem;margin-bottom:1rem;" id="mv-produto-nome"></p>
+        <div class="campo-grupo">
+          <label>Tipo</label>
+          <select class="campo-entrada" id="mv-tipo">
+            <option value="ENTRADA">Entrada (reposição)</option>
+            <option value="SAIDA">Saída manual</option>
+            <option value="AJUSTE">Ajuste (define o saldo)</option>
+          </select>
+        </div>
+        <div class="campo-grupo"><label>Quantidade</label><input class="campo-entrada" type="number" min="1" id="mv-quantidade" required></div>
+        <div class="campo-grupo"><label>Motivo (opcional)</label><input class="campo-entrada" id="mv-motivo" placeholder="Ex: reposição de fornecedor"></div>
+        <button type="submit" class="botao botao--laranja botao--bloco">Confirmar movimentação</button>
+      </form>
+      <div id="res-movimentacao" class="mensagem-resposta"></div>
+    </div>
+  </div>
+
+</body>
+</html>

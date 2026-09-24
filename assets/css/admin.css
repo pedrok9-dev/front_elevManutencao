@@ -1,0 +1,79 @@
+.admin-layout {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  min-height: 100vh;
+}
+@media (max-width: 860px) {
+  .admin-layout { grid-template-columns: 1fr; }
+  .admin-sidebar { position: static; }
+}
+
+.admin-sidebar {
+  background: var(--preto-900);
+  color: var(--branco);
+  padding: 1.4rem 1rem;
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+}
+
+.admin-sidebar .marca { font-size: 1.05rem; margin-bottom: 1.6rem; padding-inline: .4rem; }
+.admin-sidebar .marca small { font-size: .58rem; }
+
+.admin-nav { display: flex; flex-direction: column; gap: .2rem; }
+.admin-nav a {
+  display: flex; align-items: center; gap: .6rem;
+  padding: .6rem .8rem; border-radius: var(--raio-sm);
+  font-size: .88rem; font-weight: 500; color: var(--cinza-100);
+  border-left: 3px solid transparent;
+}
+.admin-nav a:hover { background: var(--preto-700); }
+.admin-nav a.ativo { background: var(--preto-700); border-left-color: var(--laranja-500); color: var(--branco); }
+
+.admin-nav__rotulo {
+  font-size: .68rem; text-transform: uppercase; letter-spacing: .08em;
+  color: var(--cinza-600); margin: 1.1rem 0 .4rem .8rem;
+}
+
+.admin-sidebar__rodape {
+  margin-top: 1.6rem; padding-top: 1rem; border-top: 1px solid var(--preto-700);
+  display: flex; flex-direction: column; gap: .6rem;
+}
+.admin-sidebar__usuario { font-size: .82rem; color: var(--cinza-400); padding-inline: .8rem; }
+.admin-sidebar__usuario strong { color: var(--branco); display: block; }
+
+.admin-main { padding: 1.8rem clamp(1rem, 3vw, 2.4rem); }
+
+.admin-topo {
+  display: flex; justify-content: space-between; align-items: flex-end; flex-wrap: wrap; gap: 1rem;
+  margin-bottom: 1.6rem;
+}
+.admin-topo h1 { font-size: 1.5rem; }
+.admin-topo p { color: var(--cinza-600); font-size: .88rem; margin-top: .2rem; }
+
+.cartoes-indicadores { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 1rem; margin-bottom: 1.8rem; }
+.cartao-indicador {
+  background: var(--branco); border: 1px solid var(--cinza-200); border-radius: var(--raio);
+  padding: 1.1rem 1.2rem; border-top: 3px solid var(--azul-700);
+}
+.cartao-indicador span { display: block; font-size: .76rem; color: var(--cinza-600); text-transform: uppercase; letter-spacing: .04em; margin-bottom: .3rem; }
+.cartao-indicador strong { font-family: var(--f-mono); font-size: 1.5rem; color: var(--azul-900); }
+.cartao-indicador--laranja { border-top-color: var(--laranja-500); }
+
+.admin-form-topo { display: flex; justify-content: space-between; align-items: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 1rem; }
+
+.modal-fundo {
+  position: fixed; inset: 0; background: rgba(16,17,20,.55); display: none;
+  align-items: center; justify-content: center; z-index: 100; padding: 1rem;
+}
+.modal-fundo.aberto { display: flex; }
+.modal-caixa {
+  background: var(--branco); border-radius: var(--raio); padding: 1.6rem; width: min(560px, 96vw);
+  max-height: 90vh; overflow-y: auto;
+}
+.modal-caixa__topo { display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; }
+.modal-caixa__fechar { font-size: 1.3rem; color: var(--cinza-600); background: none; border: none; }
+
+.linha-acoes-tabela { display: flex; gap: .4rem; }
+.linha-acoes-tabela button { padding: .35rem .6rem; font-size: .78rem; }

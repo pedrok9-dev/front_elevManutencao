@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pedidos — Painel ElevManutenção</title>
+  <link rel="stylesheet" href="../assets/css/global.css">
+  <link rel="stylesheet" href="../assets/css/admin.css">
+  <script src="../assets/js/config.js"></script>
+  <script src="../assets/js/api.js"></script>
+  <script src="../assets/js/auth.js"></script>
+  <script src="./js/pedidos.js" defer></script>
+</head>
+<body>
+  <div class="admin-layout">
+    <aside class="admin-sidebar">
+      <div class="marca"><span class="marca__indicador"><span></span><span></span><span></span><span></span></span>ElevManutenção<br><small>Painel administrativo</small></div>
+      <nav class="admin-nav">
+        <a href="./dashboard.html">📊 Dashboard</a>
+        <div class="admin-nav__rotulo">Catálogo</div>
+        <a href="./produtos.html">📦 Produtos</a>
+        <a href="./categorias.html">🏷️ Categorias</a>
+        <a href="./fornecedores.html">🚚 Fornecedores</a>
+        <a href="./kits.html">🧰 Kits</a>
+        <div class="admin-nav__rotulo">Operação</div>
+        <a href="./estoque.html">📈 Estoque</a>
+        <a href="./pedidos.html" class="ativo">🧾 Pedidos</a>
+        <a href="./entregas.html">🚛 Entregas</a>
+        <div class="admin-nav__rotulo">Análise</div>
+        <a href="./relatorios.html">📊 Relatórios</a>
+      </nav>
+      <div class="admin-sidebar__rodape">
+        <div class="admin-sidebar__usuario">Logado como<br><strong id="nomeUsuario">admin</strong></div>
+        <button class="botao botao--contorno botao--bloco" id="btnLogout" style="border-color:#fff;color:#fff;">Sair</button>
+        <a href="../pages/home.html" class="botao botao--laranja botao--bloco">Ver loja</a>
+      </div>
+    </aside>
+
+    <main class="admin-main">
+      <div class="admin-topo">
+        <div><h1>Pedidos</h1><p>Todos os pedidos realizados na loja.</p></div>
+        <select class="campo-entrada" id="f-status" style="max-width:220px;">
+          <option value="">Todos os status</option>
+          <option value="PENDENTE">Pendente</option>
+          <option value="CONFIRMADO">Confirmado</option>
+          <option value="EM_PREPARACAO">Em preparação</option>
+          <option value="ENVIADO">Enviado</option>
+          <option value="ENTREGUE">Entregue</option>
+          <option value="CANCELADO">Cancelado</option>
+        </select>
+      </div>
+
+      <div class="painel">
+        <table class="tabela-padrao">
+          <thead><tr><th>Pedido</th><th>Data</th><th>Itens</th><th>Total</th><th>Status</th><th>Ações</th></tr></thead>
+          <tbody id="tbody-pedidos"><tr><td colspan="6" class="carregando">Carregando...</td></tr></tbody>
+        </table>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

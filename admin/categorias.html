@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Categorias — Painel ElevManutenção</title>
+  <link rel="stylesheet" href="../assets/css/global.css">
+  <link rel="stylesheet" href="../assets/css/admin.css">
+  <script src="../assets/js/config.js"></script>
+  <script src="../assets/js/api.js"></script>
+  <script src="../assets/js/auth.js"></script>
+  <script src="./js/categorias.js" defer></script>
+</head>
+<body>
+  <div class="admin-layout">
+    <aside class="admin-sidebar">
+      <div class="marca"><span class="marca__indicador"><span></span><span></span><span></span><span></span></span>ElevManutenção<br><small>Painel administrativo</small></div>
+      <nav class="admin-nav">
+        <a href="./dashboard.html">📊 Dashboard</a>
+        <div class="admin-nav__rotulo">Catálogo</div>
+        <a href="./produtos.html">📦 Produtos</a>
+        <a href="./categorias.html" class="ativo">🏷️ Categorias</a>
+        <a href="./fornecedores.html">🚚 Fornecedores</a>
+        <a href="./kits.html">🧰 Kits</a>
+        <div class="admin-nav__rotulo">Operação</div>
+        <a href="./estoque.html">📈 Estoque</a>
+        <a href="./pedidos.html">🧾 Pedidos</a>
+        <a href="./entregas.html">🚛 Entregas</a>
+        <div class="admin-nav__rotulo">Análise</div>
+        <a href="./relatorios.html">📊 Relatórios</a>
+      </nav>
+      <div class="admin-sidebar__rodape">
+        <div class="admin-sidebar__usuario">Logado como<br><strong id="nomeUsuario">admin</strong></div>
+        <button class="botao botao--contorno botao--bloco" id="btnLogout" style="border-color:#fff;color:#fff;">Sair</button>
+        <a href="../pages/home.html" class="botao botao--laranja botao--bloco">Ver loja</a>
+      </div>
+    </aside>
+
+    <main class="admin-main">
+      <div class="admin-topo">
+        <div><h1>Categorias</h1><p>Organizam produtos e kits por área da manutenção.</p></div>
+      </div>
+
+      <div class="painel">
+        <div class="admin-form-topo">
+          <h3 style="font-size:1rem;">Nova categoria</h3>
+        </div>
+        <form id="form-categoria" class="campo-linha campo-linha--2" style="align-items:end;">
+          <div class="campo-grupo"><label>Nome</label><input class="campo-entrada" id="c-nome" required></div>
+          <div class="campo-grupo"><label>Descrição</label><input class="campo-entrada" id="c-descricao"></div>
+          <button type="submit" class="botao botao--laranja" style="height:44px;">Adicionar categoria</button>
+        </form>
+        <div id="res-categoria" class="mensagem-resposta"></div>
+      </div>
+
+      <div class="painel" style="margin-top:1.4rem;">
+        <table class="tabela-padrao">
+          <thead><tr><th>Nome</th><th>Descrição</th><th>Status</th><th>Ações</th></tr></thead>
+          <tbody id="tbody-categorias"><tr><td colspan="4" class="carregando">Carregando...</td></tr></tbody>
+        </table>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
